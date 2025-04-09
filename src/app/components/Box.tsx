@@ -1,12 +1,15 @@
-import { CSSProperties, ElementType, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
-type BoxProps = {
-  styleSheet: CSSProperties;
-  children?: ReactNode;
-  tag?: ElementType;
-};
+interface BoxProps  {
+ tag ?: React.ElementType;
+ children: ReactNode;
+ styleSheet:React.CSSProperties;  
+}
 
 export default function Box({ styleSheet, children, tag }: BoxProps) {
   const Tag = tag || 'div';
-  return <Tag style={styleSheet}>{children}</Tag>;
+  return( <Tag style={styleSheet}>
+    {children}
+    </Tag>
+  );
 }
